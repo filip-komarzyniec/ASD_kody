@@ -44,8 +44,8 @@ class Graph:
             S.add(u)
             #print('zbiór S :', S)
             for vertex in (self.vertices - S):
-                print(u)
-                if (u, vertex) in self.weights :
+                #print(u)
+                if (u, vertex) in self.weights :                # dla grafów skierowanych -> in self.prweights
                     if limit[vertex] > limit[u] + self.weights[u,vertex] :
                         #print(self.weights[u,vertex])
                         self.parent[vertex].append(u)
@@ -89,5 +89,6 @@ My_graph.add_edge(2, 3, 1)
 My_graph.add_edge(4, 3, 2)
 My_graph.add_edge(4, 5, 3)
 print(My_graph,'\n')
-#My_graph.dijkstra(1)
+My_graph.dijkstra(1)
+print('\n')
 My_graph.BeFord(1)
